@@ -4,7 +4,7 @@
 
 Peekr is an offline AI file assistant for Windows. Describe a document in English, Filipino, or Taglish and Peekr finds it, summarizes it, shows where it is saved, and tracks how it changed. All AI runs on your own laptop. Built for the AppBuildersPH Hackathon 2026 (Theme: Local AI).
 
-- **Demo video:** [PASTE X / LINKEDIN VIDEO URL]
+- **Demo video:** [(https://lnkd.in/p/g_ys87Y6)]
 - **Team Triple-M:** Mark Allen Cascayan, Eugene Mariano, Meynard Mosquito, Jessah Quinal
 - **Repository:** https://github.com/mrkcscyn26/peekr
 

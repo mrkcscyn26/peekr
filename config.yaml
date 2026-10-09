@@ -1,0 +1,47 @@
+server:
+  host: 127.0.0.1            # must stay 127.0.0.1 (FR-24)
+  port: 8000
+data_dir: ./data
+ollama:
+  url: http://127.0.0.1:11434
+llm:
+  model: qwen3:4b            # final choice after the Phase 0 tests
+  temperature: 0.2
+  num_ctx: 4096
+  num_predict: 250
+  timeout_seconds: 60
+  disable_thinking: true
+embedding:
+  model: intfloat/multilingual-e5-small
+  device: cpu
+  batch_size: 32
+indexing:
+  supported_extensions: ['.pdf', '.docx', '.pptx', '.txt']
+  max_file_size_mb: 50
+  ignore_patterns: ['~$*', '*.tmp', '*.crdownload', '*.part', '.*']
+chunking:
+  target_chars: 1000
+  overlap_chars: 150
+  min_chunk_chars: 200
+search:
+  top_k_vector: 50
+  top_k_keyword: 50
+  rrf_k: 60
+  default_limit: 10
+  snippet_chars: 240
+  query_llm_fallback: false  # rules only by default, keeps search fast
+summary:
+  char_budget: 8000          # about 2000 tokens of document text
+  fallback_chars: 400
+category:
+  min_score: 0.75            # tune in Phase 3 on the demo set
+  labels:
+    School: classes, lessons, reports, assignments, research, notes
+    Finance: receipts, bills, invoices, bank statements, budgets
+    Work: office documents, memos, proposals, project files
+    Personal: letters, resumes, personal notes, travel, family
+    Government and Forms: forms, applications, permits, certificates
+    Other: anything that does not fit the labels above
+watcher:
+  debounce_seconds: 1.5
+  move_window_seconds: 5

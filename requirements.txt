@@ -1,0 +1,12 @@
+# pin exact versions during T-00
+# PDF: pypdfium2 is selected; pdfplumber is the alternative.
+fastapi
+uvicorn
+sentence-transformers
+numpy
+python-docx
+python-pptx
+watchdog
+dateparser
+pytest
+pypdfium2

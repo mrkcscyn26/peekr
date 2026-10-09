@@ -1,0 +1,1 @@
+// C1 UI stub; no external requests.

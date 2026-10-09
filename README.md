@@ -30,7 +30,7 @@ With internet access, set up once:
 1. Install the latest NVIDIA driver, Python 3.11 or 3.12, Git, and Ollama for Windows.
 2. Clone this repository and create a virtual environment.
 3. Install the dependencies from `requirements.txt`.
-4. Pull the chosen local Ollama model and download the embedding model.
+4. Pull the chosen local Ollama model (`ollama pull qwen2.5:3b` for now) and download the embedding model with `python -m app.ai.embedder --download`.
 5. Run the app once, then turn off Wi-Fi and run it again to confirm offline operation.
 
 ## 7. Run
@@ -167,7 +167,7 @@ Defaults are in [config.yaml](config.yaml). `server.host` must remain `127.0.0.1
 
 ## 13. Testing and benchmarks
 
-Run the tests with `python -m pytest`. The tests in this scaffold are placeholders.
+Run the tests with `python -m pytest` (about 1 minute). Every test blocks outbound sockets, so a hidden network call fails the run. The fake demo set is generated with `python tests/make_demo_data.py`, and `python scripts/eval_search.py` runs the 30-query search benchmark. `python scripts/bench_llm.py <models>` runs the T-00 LLM timing.
 
 All benchmark numbers must be measured by the team on the demo laptop. Record the method and hardware in [docs/benchmarks.md](docs/benchmarks.md); no results have been measured for this scaffold.
 
@@ -194,19 +194,19 @@ The PRD states that the repository started at kickoff. No cloud AI API or teleme
 
 ## 16. Build status
 
-All tasks are unchecked. Build order and completion criteria are in PRD Section 12.1.
+The backend is built (T-00 to T-07, T-09, T-10) and has not been tested on the reference laptop. Build order and completion criteria are in PRD Section 12.1. Measurements are in docs/benchmarks.md.
 
-- [ ] T-00 Environment and model test
-- [ ] T-01 Skeleton, configuration, health
-- [ ] T-02 Database
-- [ ] T-03 Scanner and extractors
-- [ ] T-04 Chunker and embedder
-- [ ] T-05 Indexer, folder API, job API
-- [ ] T-06 Query parser and hybrid search
-- [ ] T-07 OS actions and file endpoints
+- [~] T-00 Environment and model test (dev laptop, CPU only; final model choice still open)
+- [x] T-01 Skeleton, configuration, health
+- [x] T-02 Database
+- [x] T-03 Scanner and extractors
+- [x] T-04 Chunker and embedder
+- [x] T-05 Indexer, folder API, job API
+- [x] T-06 Query parser and hybrid search
+- [x] T-07 OS actions and file endpoints
 - [ ] T-08 Interface: folders, search, results
-- [ ] T-09 LLM client, summary, category
-- [ ] T-10 History: events, watcher, reconciler
+- [x] T-09 LLM client, summary, category (category tuning still open)
+- [x] T-10 History: events, watcher, reconciler
 - [ ] T-11 Detail view and timeline
 - [ ] T-12 Hardening and proof
 - [ ] T-13 Stretch

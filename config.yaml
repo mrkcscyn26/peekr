@@ -5,7 +5,7 @@ data_dir: ./data
 ollama:
   url: http://127.0.0.1:11434
 llm:
-  model: qwen3:4b            # final choice after the Phase 0 tests
+  model: qwen2.5:3b          # interim T-00 choice: current qwen3:4b tag is thinking-only (docs/benchmarks.md)
   temperature: 0.2
   num_ctx: 4096
   num_predict: 250

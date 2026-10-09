@@ -23,10 +23,24 @@ Planned choices are from PRD Section 8.4. License values are marked TBD where th
 | Version control | Git and GitHub | Commit history shows the work started at the hackathon | None | TBD |
 | Development tools | AI coding assistants as allowed by the rules, logged by the team | Faster development | None | TBD |
 
+## Added during the backend build (T-00 to T-10)
+
+| Item | Version | Purpose | License |
+|---|---|---|---|
+| qwen2.5:3b (Ollama) | tag 357c53fb659c | Interim summary model (T-00) | TBD (check the Qwen2.5 3B license) |
+| qwen3:4b (Ollama) | tag 359d7dd4bcda | Tested in T-00, not used: thinking-only build | Apache 2.0 (from `ollama show`) |
+| intfloat/multilingual-e5-small | HF cache | Embeddings | MIT (per model card, verify) |
+| PyYAML | 6.0.3 | Reads config.yaml (C3) | MIT |
+| httpx | 0.28.1 | Local Ollama client (C12), FastAPI TestClient | BSD-3-Clause |
+| torch (CPU build) | 2.14.1 | Runtime for sentence-transformers | BSD-3-Clause |
+| reportlab | 5.0.1 | Dev only: writes the fake demo PDFs | BSD |
+| pytest | 9.1.1 | Tests | MIT |
+
+Pinned versions are in requirements.txt. The PRD names pypdfium2 and pdfplumber as PDF alternatives; pypdfium2 is used.
+
 ## Team disclosures
 
-- AI coding tool used for this scaffold: Copilot SDK in VS Code.
+- AI coding tool used for the scaffold: Copilot SDK in VS Code.
+- AI coding tool used for the backend build (T-00 to T-10): Devin (Cognition), model Claude Opus.
 - Final model choices and their licenses: TBD.
 - Final library and framework license details: TBD.
-
-The PRD names pypdfium2 and pdfplumber as PDF alternatives; this scaffold selects pypdfium2. No YAML reader or separate HTTP client is added because this structure-only scaffold does not yet load configuration or call Ollama.

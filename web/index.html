@@ -1,1 +1,37 @@
-<!-- C1 UI stub; no external requests. -->
+<!doctype html>
+<!-- C1 Interface. Implements F1-F7 in the browser (T-08, T-11). Every asset is served from this folder; no external requests (FR-23). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Peekr</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+</head>
+<body>
+<div class="shell" id="shell">
+  <header class="titlebar">
+    <div class="brand"><svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" class="logo-bg"/><circle cx="15" cy="15" r="7" fill="none" class="logo-fg-s" stroke-width="2.4"/><circle cx="15" cy="15" r="2.6" class="logo-fg"/><path d="M20.5 20.5 26 26" class="logo-fg-s" stroke-width="2.6" stroke-linecap="round"/></svg><b>Peekr</b></div>
+    <nav class="address" id="address" aria-label="Location"></nav>
+    <form class="searchbox" id="sform" role="search"><span id="sic"></span><input id="q" type="search" autocomplete="off" maxlength="500" aria-label="Search your files" placeholder="Search"><span class="kbd" aria-hidden="true"></span></form>
+    <div class="datewrap" id="datewrap"></div>
+    <div class="datewrap" id="themewrap"></div>
+  </header>
+  <div class="cmdbar" id="cmdbar"></div>
+  <div id="banner" aria-live="polite"></div>
+  <div class="body">
+    <nav class="navpane" id="navpane" aria-label="Navigation"></nav>
+    <main class="content" id="view"><div class="empty"><h3>Loading Peekr…</h3><p>Connecting to the local server on this laptop.</p></div></main>
+    <aside class="preview" id="preview" aria-label="Preview pane"></aside>
+  </div>
+  <footer class="statusbar" id="statusbar"></footer>
+</div>
+<div class="scrim" id="scrim"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript><div class="banner bad">Peekr needs JavaScript to run. It runs only on this laptop.</div></noscript>
+<script type="module" src="app.js"></script>
+</body>
+</html>

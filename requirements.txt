@@ -1,12 +1,21 @@
-# pin exact versions during T-00
+# Pinned in T-00 (Python 3.12.10, Windows).
 # PDF: pypdfium2 is selected; pdfplumber is the alternative.
-fastapi
-uvicorn
-sentence-transformers
-numpy
-python-docx
-python-pptx
-watchdog
-dateparser
-pytest
-pypdfium2
+fastapi==0.143.0
+uvicorn==0.54.0
+sentence-transformers==6.1.0
+torch==2.14.1
+numpy==2.5.3
+python-docx==1.2.0
+python-pptx==1.0.2
+watchdog==6.0.0
+dateparser==1.4.3
+pypdfium2==5.14.0
+# Reads config.yaml (C3).
+PyYAML==6.0.3
+# Local Ollama HTTP client (C12) and FastAPI TestClient.
+httpx==0.28.1
+
+# Development and tests only (not imported by app/).
+pytest==9.1.1
+# Writes the fake demo PDFs in tests/make_demo_data.py.
+reportlab==5.0.1
